@@ -44,7 +44,7 @@ app.post("/user", async (req, res) => {
 
         })
 
-        res.status(200).json({message: "Successfully added to the waitlist"});
+        return res.status(200).json({message: "Successfully added to the waitlist"});
     } catch (error) {
         console.log(error);
     }
