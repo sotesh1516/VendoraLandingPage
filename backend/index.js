@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: "https://vendoralandingpage.onrender.com",
     credentials: true // If you're sending cookies or auth headers
   }));
 
