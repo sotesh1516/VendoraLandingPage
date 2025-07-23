@@ -19,9 +19,9 @@ app.post("/user", async (req, res) => {
     const userInfo = req.body;
 
     const auth = new GoogleAuth({
-        keyFile: "credentials.json",
-        scopes: ['https://www.googleapis.com/auth/spreadsheets'], 
-    });
+        credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+      });
 
     //client object (for auth) to pass into requests
     const client = await auth.getClient();
