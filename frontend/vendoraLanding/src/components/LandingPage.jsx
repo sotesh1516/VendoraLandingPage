@@ -9,7 +9,7 @@ export default function LandingPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Waitlist email submitted:", email);
+    //console.log("Waitlist email submitted:", email);
     setSubmitted(true);
 
     const user = await signUpUser({userEmail: email});
