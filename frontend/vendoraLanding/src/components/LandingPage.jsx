@@ -105,7 +105,7 @@ export default function LandingPage() {
         >
           <input
             type="email"
-            placeholder="Enter your email"
+            placeholder="Enter your school email"
             className="input input-bordered w-full sm:flex-1"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
