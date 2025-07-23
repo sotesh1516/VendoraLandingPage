@@ -46,7 +46,8 @@ app.post("/user", async (req, res) => {
 
         return res.status(200).json({message: "Successfully added to the waitlist"});
     } catch (error) {
-        console.log(error);
+        console.error("Google Sheets API error:", error.response?.data || error.message || error);
+    return res.status(500).json({ message: "Failed to append to Google Sheets", error: error.message });
     }
 
 
