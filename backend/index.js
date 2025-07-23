@@ -24,6 +24,8 @@ app.post("/user", async (req, res) => {
     //Fix the private key newlines
     credentials.private_key = credentials.private_key.replace(/\\n/g, '\n');
 
+    console.log(credentials);
+
     const auth = new GoogleAuth({
         credentials: credentials, // Use the fixed credentials
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],

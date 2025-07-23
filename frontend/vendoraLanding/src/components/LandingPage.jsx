@@ -10,15 +10,13 @@ export default function LandingPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Waitlist email submitted:", email);
-    // TODO: send to backend or mailing service
+    setSubmitted(true);
 
     const user = await signUpUser({userEmail: email});
 
     setEmail("");
 
-    if (user && user.message) {
-      setSubmitted(true);
-    }
+    setSubmitted(true);
   };
 
   return (
