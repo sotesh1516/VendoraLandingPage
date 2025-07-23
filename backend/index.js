@@ -46,7 +46,7 @@ app.post("/user", async (req, res) => {
             valueInputOption: "USER_ENTERED",
             resource: {
                 values: [
-                    ["Today", userInfo.userEmail],
+                    [new Date().toLocaleString(), userInfo.userEmail],
                 ]
             }
 
