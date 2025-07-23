@@ -18,10 +18,16 @@ app.use(cors({
 app.post("/user", async (req, res) => {
     const userInfo = req.body;
 
+    // Parse the credentials from environment variable
+    const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+    
+    //Fix the private key newlines
+    credentials.private_key = credentials.private_key.replace(/\\n/g, '\n');
+
     const auth = new GoogleAuth({
-        credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+        credentials: credentials, // Use the fixed credentials
         scopes: ['https://www.googleapis.com/auth/spreadsheets'],
-      });
+    });
 
     //client object (for auth) to pass into requests
     const client = await auth.getClient();
